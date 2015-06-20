@@ -1,2 +1,6 @@
 cache
 cache/*.php
+cache/data_cron.lock_check.php
+cache/data_cron.lock_check.php
+cache/data_cron.lock_check.php
+cache/data_hooks.php
