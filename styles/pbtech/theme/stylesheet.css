@@ -9,17 +9,22 @@
 /* Header & main body
 --------------------------------------------- */
 body {
-	background: #000;
-	color: #4A4A4A;
+	/*background: #000;
+	color: #4A4A4A;*/
+	background: #fff url("./images/white_texture.png") repeat scroll center center;
+    color: #544745;
+    font-family: Arial,sans-serif;
 }
 
 #wrap {
-	background: #D3D1CE;
 	max-width: inherit;
 }
 
 #page-header {
-	background: url("./images/bg.jpg") no-repeat scroll 50% -50px #040404;
+	/*background: url("./images/bg.jpg") no-repeat scroll 50% -50px #040404;*/
+	background: #242626 url("./images/noise.png") repeat scroll 0 0;
+    border-bottom: 1px solid #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 #logo {
@@ -35,13 +40,16 @@ body {
 	min-height: inherit;
 	padding: 0 10px;
 	position: relative;
+	border-top: 1px solid #fff;
 }
 
 #page-body {
-	background: none;
+	/*background: #fff;*/
 	border: none;
 	border-radius: 0;
 	padding: 0 0 20px 0;
+	/*border: 1px solid #d8d8d8;
+	border-radius: 3px;*/
 }
 
 #page-body:before,
@@ -175,7 +183,6 @@ hr {
 /* Breadcrumbs & Navlinks
 --------------------------------------------- */
 #body-header {
-	background: #d3d1ce url("./images/bg-middle.jpg") 50% 0 no-repeat;
 	background-size: auto;
 	height: 47px;
 }
@@ -787,13 +794,13 @@ input.button1:active, input.button3:active, input.button2:active {
 /* Search box (header)
 --------------------------------------------- */
 .search-header {
-	background: url("./images/search-bar.gif") no-repeat 0 0;
+	background: url("./images/search-bar.png") no-repeat 0 0;
 	border: none;
 	height: 31px;
 	position: absolute;
 	right: 10px;
 	left: auto;
-	bottom: 30px;
+	bottom: 60px;
 	width: 305px;
 	z-index: 1;
 }
@@ -831,6 +838,12 @@ input.button1:active, input.button3:active, input.button2:active {
 	right: 0;
 	top: 0;
 	width: 31px !important;
+}
+
+.inner .inner-repos {
+    bottom: 5px;
+    position: absolute;
+    right: 0;
 }
 
 /* CP common
@@ -941,8 +954,9 @@ input.button1:active, input.button3:active, input.button2:active {
 /* Footer
 --------------------------------------------- */
 #page-footer {
-	background: url("./images/bg.jpg") no-repeat scroll 50% 70% #000;
-	border-top: 4px solid #777674;
+	/*background: url("./images/bg.jpg") no-repeat scroll 50% 70% #000;*/
+	background: #242626 url("./images/noise.png") repeat scroll 0 0;
+	border-top: 1px solid #000;
 	margin-top: 20px;
 	text-shadow: none;
 }
@@ -1041,10 +1055,10 @@ input.button1:active, input.button3:active, input.button2:active {
 --------------------------------------------- */
 .collapse-box h2,
 .stat-block h3 {
-	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
-	font-weight: bold;
-	color: #393939;
-	border-bottom-color: #b5b3b2;
+	/*font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;*/
+	/*font-weight: bold;*/
+	/*color: #393939;
+	border-bottom-color: #b5b3b2;*/
 }
 .collapse-box h2:hover,
 .stat-block h3:hover {
@@ -1052,7 +1066,7 @@ input.button1:active, input.button3:active, input.button2:active {
 }
 
 .collapse-box h2 a,
-.stat-block h3 a { color: #333232; }
+.stat-block h3 a { color: #444; }
 
 .collapse-box h2 a:hover,
 .stat-block h3 a:hover { color: #037bad; text-decoration: none; }
@@ -1342,6 +1356,12 @@ dl.pm_read {
 #page-footer li.breadcrumbs:before {
 	color: #9DBECB;
 }
+
+.small-icon.darkercolor > a:before,
+#page-footer li.breadcrumbs:before {
+	color: #544745;
+}
+
 .small-icon > a:hover:before {
 	/*text-shadow: 0 0 16px #C920C7;*/
 }

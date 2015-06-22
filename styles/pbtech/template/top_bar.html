@@ -1,12 +1,40 @@
 <div id="top-bar">
 	<div class="inner">
 		<ul class="linklist">
-			<li class="icon1 small-icon" data-skip-responsive="true"><strong>PBTech Style</strong></li>
-			<li class="icon2 small-icon link"><a href="http://pbwow.com/forum/">PBWoW</a></li>
-			<li class="icon3 small-icon link"><a href="https://www.phpbb.com/">phpBB</a></li>
+			<li class="icon4 small-icon link" data-skip-responsive="true"><strong><a href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITENAME}</a></strong></li>			
 
-			<!-- EVENT quickstyle_event -->
-			<li class="icon4 small-icon link rightside"><a href="#">On the right</a></li>
+			<!-- IF S_REGISTERED_USER -->
+
+				<li class="link small-icon icon-logout rightside"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
+
+
+				<li class="link small-icon icon-profile rightside"><a href="{U_PROFILE}" title="{L_PROFILE}" role="menuitem">{CURRENT_USERNAME_SIMPLE}</a></li>
+
+				<!-- IF S_DISPLAY_PM -->
+					<li class="link small-icon icon-pm rightside">
+						<a href="{U_PRIVATEMSGS}" role="menuitem"><span>Inbox (</span><strong>{PRIVATE_MESSAGE_COUNT}</strong><span>)</span></a>
+					</li>
+				<!-- ENDIF -->
+
+				<!-- IF U_RESTORE_PERMISSIONS -->
+				<li class="link small-icon icon-restore-permissions rightside"><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+				<!-- ENDIF -->
+
+				<!-- IF S_NOTIFICATIONS_DISPLAY -->
+				<li class="small-icon icon-notification link rightside">
+					<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger"><span>{L_NOTIFICATIONS} (</span><strong>{NOTIFICATIONS_COUNT}</strong><span>)</span></a>
+					<!-- INCLUDE notification_dropdown.html -->
+				</li>
+				<!-- ENDIF -->
+				
+			<!-- ELSE -->
+				<li class="link small-icon icon-logout rightside"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
+				<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+					<li class="link small-icon icon-register rightside" data-skip-responsive="true"><a href="{U_REGISTER}" role="menuitem">{L_REGISTER}</a></li>
+				<!-- ENDIF -->
+				<!-- EVENT navbar_header_logged_out_content -->
+			<!-- ENDIF -->
+															
 		</ul>
 	</div>
 </div>

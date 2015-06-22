@@ -78,16 +78,16 @@
 	<a id="top" class="anchor" accesskey="t"></a>
 	<div id="page-header">
 		<div class="headerbar">
-			<div class="inner">
+			<div class="inner"  style="height: 130px">
 
-			<div id="site-description">
+			<div id="site-description" style="width: 312px">
 				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->"></a>
 				<h1>{SITENAME}</h1>
 				<p>{SITE_DESCRIPTION}</p>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 			</div>
 
-			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+			<!-- IF S_DISPLAY_SEARCH -->
 			<div id="search-box" class="search-box search-header">
 				<form action="{U_SEARCH}" method="get" id="search">
 				<fieldset>
@@ -99,6 +99,65 @@
 				</form>
 			</div>
 			<!-- ENDIF -->
+
+			<div class="inner-repos">
+
+				<ul id="nav-main" class="linklist bulletin" role="menubar">
+
+					<li id="quick-links" class="small-icon responsive-menu dropdown-container<!-- IF not S_DISPLAY_QUICK_LINKS and not S_DISPLAY_SEARCH --> hidden<!-- ENDIF -->">
+						<a href="#" class="responsive-menu-link dropdown-trigger">{L_QUICK_LINKS}</a>
+						<div class="dropdown hidden">
+							<div class="pointer"><div class="pointer-inner"></div></div>
+							<ul class="dropdown-contents" role="menu">
+								<!-- EVENT navbar_header_quick_links_before -->
+
+								<!-- IF S_DISPLAY_SEARCH -->
+									<li class="separator"></li>
+									<!-- IF S_REGISTERED_USER -->
+										<li class="small-icon icon-search-self"><a href="{U_SEARCH_SELF}" role="menuitem">{L_SEARCH_SELF}</a></li>
+									<!-- ENDIF -->
+									<!-- IF S_USER_LOGGED_IN -->
+										<li class="small-icon icon-search-new"><a href="{U_SEARCH_NEW}" role="menuitem">{L_SEARCH_NEW}</a></li>
+									<!-- ENDIF -->
+									<!-- IF S_LOAD_UNREADS -->
+										<li class="small-icon icon-search-unread"><a href="{U_SEARCH_UNREAD}" role="menuitem">{L_SEARCH_UNREAD}</a></li>
+									<!-- ENDIF -->
+									<li class="small-icon icon-search-unanswered"><a href="{U_SEARCH_UNANSWERED}" role="menuitem">{L_SEARCH_UNANSWERED}</a></li>
+									<li class="small-icon icon-search-active"><a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+									<li class="separator"></li>
+									<li class="small-icon icon-search"><a href="{U_SEARCH}" role="menuitem">{L_SEARCH}</a></li>
+								<!-- ENDIF -->
+
+								<!-- IF not S_IS_BOT and (S_DISPLAY_MEMBERLIST or U_TEAM) -->
+									<li class="separator"></li>
+									<!-- IF S_DISPLAY_MEMBERLIST --><li class="small-icon icon-members"><a href="{U_MEMBERLIST}" role="menuitem">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+									<!-- IF U_TEAM --><li class="small-icon icon-team"><a href="{U_TEAM}" role="menuitem">{L_THE_TEAM}</a></li><!-- ENDIF -->
+								<!-- ENDIF -->
+								<li class="separator"></li>
+
+								<!-- EVENT navbar_header_quick_links_after -->
+							</ul>
+						</div>
+					</li>
+					<!-- IF U_ACP -->
+					<li class="small-icon icon-acp"><a href="{U_ACP}" title="{L_ACP}" role="menuitem">{L_ACP_SHORT}</a>
+					</li>
+					<!-- ENDIF -->
+
+					<!-- IF U_MCP -->
+					<li class="small-icon icon-mcp"><a href="{U_MCP}" title="{L_MCP}" role="menuitem">{L_MCP_SHORT}</a>
+					</li>
+					<!-- ENDIF -->
+
+					<!-- EVENT overall_header_navigation_prepend -->
+					<li class="small-icon icon-faq" <!-- IF not S_USER_LOGGED_IN -->data-skip-responsive="true"<!-- ELSE -->data-last-responsive="true"<!-- ENDIF -->><a href="{U_FAQ}" rel="help" title="{L_FAQ_EXPLAIN}" role="menuitem">{L_FAQ}</a>
+					</li>
+					<!-- EVENT overall_header_navigation_append -->
+					</ul>
+
+				</div>
+
+			</div>
 
 			</div>
 		</div>
