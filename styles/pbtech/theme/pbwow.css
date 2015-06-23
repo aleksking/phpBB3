@@ -85,7 +85,6 @@ body {
 	background: #fff none repeat scroll 0 0;
     border: 1px solid #e4e4e4;
     margin-bottom: 30px;
-    padding: 20px;
 }
 
 #logo {
@@ -420,8 +419,8 @@ hr {
     border: 1px solid #ccc;
     display: block;
     float: left;
-    margin: 9px;
-    width: 296px;
+    margin: 0 1px 1px;
+    width: 32.9%;
 }
 
 .forum-blocks li.row:hover {
@@ -462,11 +461,11 @@ hr {
 }
 
 .forum-blocks dl.icon .list-inner {
-	margin: 0 0 8px 47px;
+	margin: 0 0 8px;
 	padding: 0;
 	color: #877B69;
 	font-size: 10px;
-	line-height: 14px;
+	line-height: 20px;
 	transition: all 0.25s ease-in-out 0s;
 }
 
@@ -2954,4 +2953,9 @@ body.pbwow3 #page-body:before {
 	.postprofile {
 		background-position: 50% 0;
 	}
+}
+
+
+.forum-description {
+	font-size: 12px;
 }
